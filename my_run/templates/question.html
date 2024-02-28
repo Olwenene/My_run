@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Presidential Candidates</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    <h1 class="candidates-heading">Presidential candidates</h1>
+
+    {% for question in question_objects %}
+        <div class="question-container">
+            <h2>{{ question.question_text }}</h2>
+            <p class="pub-date">Published on: {{ question.pub_date }}</p>
+            <ul class="candidate-list">
+                <li class="candidate-item">
+                    <a class="candidate-bio-link" href={% url 'my_run:question_detail' pk=question.pk %}>{{ question.candidate_biography_1 }}</a>
+                </li>
+                <li class="candidate-item">
+                    <a class="candidate-bio-link" href={% url 'my_run:question_detail' pk=question.pk %}>{{ question.candidate_biography_2 }}</a>
+                </li>
+                <li class="candidate-item">
+                    <a class="candidate-bio-link" href={% url 'my_run:question_detail' pk=question.pk %}>{{ question.candidate_biography_3 }}</a>
+                </li>
+            </ul>
+        </div>
+    {% endfor %}
+
+    {% endblock %}
+</body>
+</html>

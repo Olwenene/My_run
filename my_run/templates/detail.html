@@ -1,0 +1,14 @@
+<form method="post" action="{% url 'my_run:vote' %}">    
+
+    <p>If you are confident and content with your decision , go ahead and submit your choice.</p>
+    <input type="radio" name="choice" id="Yes"  value="Yes">
+    <label for="Yes">Yes</label><br>
+    <input type="radio" name="choice" id="No"  value="No">
+    <label for="No">No</label><br>
+         
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" name="vote" >
+
+</form>
+ 

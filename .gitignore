@@ -1,0 +1,24 @@
+# Ignore environment-specific settings
+.env
+
+# Ignore pipenv files
+Pipfile
+Pipfile.lock
+
+# Ignore any compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore backup files
+*~
+*.bak
+
+# Ignore database migrations
+**/migrations/
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore coverage reports
+.coverage

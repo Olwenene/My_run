@@ -1,0 +1,34 @@
+.candidates-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.question-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.pub-date {
+    font-style: italic;
+    color: #666;
+}
+
+.candidate-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.candidate-item {
+    margin-bottom: 10px;
+}
+
+.candidate-bio-link {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.candidate-bio-link:hover {
+    text-decoration: underline;
+}
