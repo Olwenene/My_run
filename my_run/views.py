@@ -6,6 +6,9 @@ from .models import Question
 from .form import Choiceform
 
 def register(request):
+    """ 
+    defining a function to register a user with a form provided.
+    """
     form = UserCreationForm()
 
     if request.method == 'POST':
@@ -17,9 +20,15 @@ def register(request):
     return  render(request, 'register.html', {'form': form})
     
 def user_login(request):
+    """ 
+    A function to login users.
+    """
     return render(request, 'login.html')
 
 def authenticate_user(request):
+    """ 
+    This function authenticate the user and then provide them with the appropriate next step depending on their outcome.
+    """
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -36,10 +45,16 @@ def authenticate_user(request):
     return render(request, 'register.html')
 
 def question_detail(request, pk):
+    """ 
+    A function that provides the user with the question form.
+    """
     question = get_object_or_404(Question, pk=pk)
     return render(request, 'detail.html', {'question':question})
     
 def vote(request):
+    """ 
+    A function that allows the user to vote for their desired  candidate.
+    """
     if request.method == 'POST':
         form = Choiceform(request.POST)
         if form.is_valid():
@@ -50,5 +65,8 @@ def vote(request):
     return render(request, 'detail.html', {'form': form})
 
 def goodbye(request):
+    """ 
+    This function provides the user with a an appreciation message.
+    """
     return render(request, 'goodbye.html')
 
